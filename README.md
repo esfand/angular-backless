@@ -1,5 +1,8 @@
 # angular-seed — the seed for AngularJS apps
 
+Original: http://www.codeorbits.com/blog/2013/12/20/rapid-angularjs-prototyping-without-real-backend
+Demo: http://www.codeorbits.com/trackit/index.html#/home
+
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 You can use it to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
