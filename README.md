@@ -1,6 +1,6 @@
 # angular-seed — the seed for AngularJS apps
 
-Original: http://www.codeorbits.com/blog/2013/12/20/rapid-angularjs-prototyping-without-real-backend
+Original: http://www.codeorbits.com/blog/2013/12/20/rapid-angularjs-prototyping-without-real-backend    
 Demo: http://www.codeorbits.com/trackit/index.html#/home
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
@@ -63,7 +63,9 @@ Requires [node.js](http://nodejs.org/), Karma (`sudo npm install -g karma`) and 
 or remote browser.
 
 * start `scripts/test.sh` (on windows: `scripts\test.bat`)
-  * a browser will start and connect to the Karma server (Chrome is default browser, others can be captured by loading the same url as the one in Chrome or by changing the `config/karma.conf.js` file)
+  * a browser will start and connect to the Karma server (Chrome is default browser, 
+    others can be captured by loading the same url as the one in Chrome or by changing 
+    the `config/karma.conf.js` file)
 * to run or re-run tests just change any of your source or test javascript files
 
 

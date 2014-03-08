@@ -2,7 +2,8 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers','ngMockE2E','ngRoute','ngResource']).
+angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers',
+                         'ngMockE2E', 'ngRoute', 'ngResource']).
   config(['$routeProvider','$httpProvider', function($routeProvider, $httpProvider) {
     $routeProvider.when('/signin', {templateUrl: 'partials/signin.html', controller: 'UserController'}).
     when('/signup', {templateUrl: 'partials/signup.html', controller: 'UserController'}).
@@ -17,13 +18,41 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
           var activitiesRepository = new utils.Repository();
 
           userRepository.save({email: 'x', password:'x', fullName: 'Tom'});
-          activitiesRepository.save({userId: 101,workoutDate: new Date().setDate(new Date().getDate()-7),activityType: 'Running', duration: 22, calories: 280, distance: 2.2});
-          activitiesRepository.save({userId: 101,workoutDate: new Date().setDate(new Date().getDate()-6),activityType: 'Running', duration: 28, calories: 310, distance: 3.2});
-          activitiesRepository.save({userId: 101,workoutDate: new Date().setDate(new Date().getDate()-5),activityType: 'Running', duration: 28, calories: 310, distance: 3});
-          activitiesRepository.save({userId: 101,workoutDate: new Date().setDate(new Date().getDate()-4),activityType: 'Running', duration: 34, calories: 360, distance: 3});
-          activitiesRepository.save({userId: 101,workoutDate: new Date().setDate(new Date().getDate()-2),activityType: 'Running', duration: 25, calories: 290, distance: 2});
-          activitiesRepository.save({userId: 101,workoutDate: new Date().setDate(new Date().getDate()-1),activityType: 'Running', duration: 32, calories: 350, distance: 2});
-          activitiesRepository.save({userId: 101,workoutDate: new Date(),activityType: 'Running', duration: 22, calories: 200, distance: 1.2});
+          activitiesRepository.save({
+              userId: 101,
+              workoutDate: new Date().setDate(new Date().getDate() - 7),
+              activityType: 'Running',
+              duration: 22,
+              calories: 280,
+              distance: 2.2
+          });
+          activitiesRepository.save({
+              userId: 101,
+              workoutDate: new Date().setDate(new Date().getDate() - 6),
+              activityType: 'Running', duration: 28, calories: 310, distance: 3.2
+          });
+          activitiesRepository.save({
+              userId: 101,
+              workoutDate: new Date().setDate(new Date().getDate() - 5),
+              activityType: 'Running', duration: 28, calories: 310, distance: 3
+          });
+          activitiesRepository.save({
+              userId: 101,
+              workoutDate: new Date().setDate(new Date().getDate() - 4),
+              activityType: 'Running', duration: 34, calories: 360, distance: 3
+          });
+          activitiesRepository.save({
+              userId: 101, workoutDate: new Date().setDate(new Date().getDate() - 2),
+              activityType: 'Running', duration: 25, calories: 290, distance: 2
+          });
+          activitiesRepository.save({
+              userId: 101, workoutDate: new Date().setDate(new Date().getDate() - 1),
+              activityType: 'Running', duration: 32, calories: 350, distance: 2
+          });
+          activitiesRepository.save({
+              userId: 101, workoutDate: new Date(),
+              activityType: 'Running', duration: 22, calories: 200, distance: 1.2
+          });
 
           $httpBackend.whenPOST('/api/signin').respond(function(method, url, data){
               var request = JSON.parse(data);
@@ -42,7 +71,10 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
               var request = JSON.parse(data);
               var searchReslult = userRepository.find({email: request.email});
               if(searchReslult){
-                  return [200, {registered: false, message: 'Sorry, user with the email ' + request.email + ' is already registered.'}];
+                  return [200, {
+                      registered: false, message: 'Sorry, user with the email ' + request.email +
+                                                  ' is already registered.'
+                  }];
               }
               else{
                 userRepository.save(request);
